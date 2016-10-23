@@ -32,9 +32,6 @@ function initializeClock(id, endtime) {
 			clearInterval(timeinterval);
 		}
 	}
-	
-	updateClock();
-	window.timeinterval = setInterval(updateClock, 1000);
 }
 
 var timeInMinutes = 25;
@@ -42,7 +39,9 @@ var currentTime = Date.parse(new Date());
 var deadline = new Date(currentTime + timeInMinutes*60*1000);
 
 function startClock() {
-	initializeClock('clockdiv', deadline);
+	updateClock();
+	window.timeinterval = setInterval(updateClock, 1000);
 }
 
+initializeClock('clockdiv', deadline);
 document.getElementById('startbutton').onclick = startClock;
