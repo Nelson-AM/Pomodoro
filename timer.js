@@ -41,5 +41,3 @@ var timeInMinutes = 25;
 var currentTime = Date.parse(new Date());
 var deadline = new Date(currentTime + timeInMinutes*60*1000);
 initializeClock('clockdiv', deadline)
-
-// var deadline = new Date(Date.parse(new Date()) + 25 * 60 * 1000);
